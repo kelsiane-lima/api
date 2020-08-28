@@ -1,0 +1,8 @@
+Rodar Migrations
+npx knex migrate:latest
+
+//latest é a última migração que criei
+
+knex migrate:list
+
+//Listar as Migrations

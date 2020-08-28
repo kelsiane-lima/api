@@ -34,7 +34,7 @@ export default function Logon() {
     <div className="logon-container">
         <section className="form">
             <form onSubmit={handleLogin}>
-                <h1>Faça seu Logon</h1>
+                <h1>Faça seu Login</h1>
 
                 <input 
                 placeholder="Seu ID"

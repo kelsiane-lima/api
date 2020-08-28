@@ -3,7 +3,7 @@ const connection = require('../database/connection');
 
 module.exports = {
     async index(request, response){
-        const user = await connection('usuario').select('*');
+        const user = await connection('usuarios').select('*');
     
         return response.json(user);
     },
@@ -13,7 +13,7 @@ module.exports = {
 
         const id = crypto.randomBytes(4).toString('HEX');
 
-        await connection('usuario').insert({
+        await connection('usuarios').insert({
             id,
             name,
             senha,
