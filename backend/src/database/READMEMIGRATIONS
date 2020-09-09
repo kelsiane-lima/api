@@ -1,0 +1,61 @@
+Rodar Migrations
+npx knex migrate:latest
+
+//latest é a última migração que criei
+
+npx knex migrate:list
+
+//Listar as Migrations
+
+npx knex migrate:make create_table_users
+
+//Criar Migrations
+
+npx knex migrate:up 20200417224309_create_user.js
+ //para rodar uma migration especifica
+
+//Posso transformar em arrow function
+//vários tipos, integer, float
+exports.up = function(knex) {
+  return knex.schema.createTable('produtos', function (table){
+      table.increments('id').unique()
+      table.string('name').notNullable()
+      table.integer('qtd')
+      table.integer('qtd_limite')
+      table.string('tipo')
+      table.timestamp('created_at').defaultTo(knex.fn.now())
+      table.timestamp('update_at').defaultTo(knex.fn.now())
+  });
+};
+
+exports.down = function(knex) {
+  return knex.schema.dropTable('produtos')
+};
+
+-------------------------------------------------
+exports.up = function(knex) {
+    return knex.schema.createTable('usuario', function (table){
+        table.increments('id').primary()
+        table.string('name').notNullable()
+        table.string('email').unique()
+        table.string('senha').notNullable()
+        table.timestamp('created_at').defaultTo(knex.fn.now())
+        table.timestamp('update_at').defaultTo(knex.fn.now())
+    });
+  };
+  
+  exports.down = function(knex) {
+    return knex.schema.dropTable('usuario')
+  };
+
+
+## SEED
+Conteudo padrão ao criar o bd, por exemplo, popular uma tabela de lugares
+
+npx knex seed:make 001_usuarios
+//criar seed
+
+npx knex seed:run
+//rodar as seed
+knex seed:run --specific=seed-filename.js
+//rodar seed especifica

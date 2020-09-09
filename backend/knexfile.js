@@ -1,32 +1,39 @@
 // Update with your config settings.
 
 module.exports = {
-
-  development: {
+  
+  staging: {
     client: 'sqlite3',
     connection: {
       filename: './src/database/db.sqlite'
     },
-    migrations:{
-      directory: './src/database/migrations'
+    seeds: {
+      directory: `${__dirname}/src/database/seeds`
     },
-    useNullAsDefault: true,
+    migrations: {
+      directory: `${__dirname}/src/database/migrations`
+    },
+  
   },
 
-  staging: {
+  development: {
     client: 'postgresql',
     connection: {
       host:'127.0.0.1',
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'postgres',
+      user:     'postgres',
+      password: 'root'
     },
     pool: {
       min: 2,
       max: 10
     },
+    seeds: {
+      directory: `${__dirname}/src/database/seeds`
+    },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
+      directory: `${__dirname}/src/database/migrations`
     }
   },
 
@@ -44,6 +51,11 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations'
     }
-  }
-
+  },
+  onUpdateTrigger: table  => `
+  CREATE TRIGGER ${table}_updated_at
+  BEFORE UPDATE ON ${table}
+  FOR EACH ROW
+  EXECUTE PROCEDURE on_update_timestamp();
+  `
 };
