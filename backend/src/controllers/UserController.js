@@ -46,17 +46,21 @@ module.exports = {
             next(error).status(500)
         }
     },
-    async create(request, response) {
-        const { nome, senha } = request.body;
-
-        // const id = crypto.randomBytes(4).toString('HEX');
-
-        await connection('usuarios').insert({
-
-            nome,
-            senha
-        });
-
-        return response.send();
+    async create(request, response, next) {
+        try {
+            const { nome,email, senha } = request.body;
+    
+            await connection('usuarios').insert({
+    
+                nome,
+                email,
+                senha
+            });
+    
+            return response.send().status(201);
+            
+        } catch (error) {
+            next(error)
+        }
     }
 }

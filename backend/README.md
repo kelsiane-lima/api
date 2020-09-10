@@ -2,11 +2,6 @@
 > Um sistema de controle de estoque simples.
 
 [![NPM Version][npm-image]][npm-url]
-[![Build Status][expressjs-image]][https://expressjs.com/pt-br/]
-[![Build Status][knexjs-image]][http://knexjs.org/]
-[![Build Status][pg-image]][http://postgresql.org/]
-[![Build Status][cors-image]][http://knexjs.org/]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 
 ## Instalação
