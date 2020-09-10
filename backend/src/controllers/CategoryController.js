@@ -1,4 +1,5 @@
 const connection = require('../database/connection');
+const { edit } = require('./ProductController');
 
 module.exports = {
     async index(request, response, next) {
@@ -15,10 +16,11 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            const { nome } = request.body;
+            const { nome, descricao } = request.body;
 
             await connection('categorias').insert({
-                nome
+                nome,
+                descricao
             });
 
             return response.send().status(201);
@@ -27,14 +29,27 @@ module.exports = {
         }
 
     },
+    async edit(request, response, next){
 
+        try {
+            const {categoria_id} = request.params;
+            const {nome, descricao} = request.body;
+            await connection('categorias').where('categoria_id', categoria_id)
+            .update('nome', nome)
+            .update('descricao', descricao);
+        response.send().status(201);
+        } catch (error) {
+            next(error)
+        }
+    },
+    
     async delete(request, response, next) {
         try {
-            const { id } = request.params;
+            const { categoria_id } = request.params;
 
-            await connection('categorias').where('id', id).delete();
+            await connection('categorias').where('categoria_id', categoria_id).delete();
 
-            return response.status(204).send();
+            return response.status(201).send();
         } catch (error) {
             next(error)
         }

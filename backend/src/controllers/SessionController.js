@@ -5,7 +5,7 @@ module.exports = {
         try {
         const {idName, password} = request.body;
 
-        const user = await connection('usuarios').where('name', idName).andWhere('senha', password).select('name').first();
+        const user = await connection('usuarios').where('nome', idName).andWhere('senha', password).select('nome').first();
 
         if(!user){
             return response.status(400).json({error:'Incorrect Username or Password'});

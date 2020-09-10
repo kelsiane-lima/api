@@ -32,18 +32,37 @@ module.exports = {
 
     },
 
-    async delete(request, response) {
+    async delete(request, response, next) {
         try {
-            const { id } = request.params;
+            const { fornecedor_id } = request.params;
 
-            await connection('fornecedores').where('id', id).delete();
+            await connection('fornecedores').where('fornecedor_id', fornecedor_id).delete();
 
-            return response.status(204).send();
+            return response.status(201).send();
 
         }
         catch (error) {
             next(error)
         }
+    },
+
+    async edit(request, response, next) {
+
+        try {
+            const {fornecedor_id} = request.params;
+            const { nome, cnpj, celular, email, endereco } = request.body;
+
+            
+            await connection('fornecedores').where('fornecedor_id', fornecedor_id)
+            .update('nome',nome)
+            .update('cnpj', cnpj)
+            .update('celular',celular)
+            .update('email',email)
+            .update('endereco',endereco);
+            return response.send().status(201);
+        } catch (error) {
+            next(error)
+        }
+    }
 
     }
-}
