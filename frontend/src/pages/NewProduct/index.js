@@ -10,8 +10,11 @@ export default function NewProduct() {
     const [name, setName] = useState('');
     const [qtd, setQtd] = useState('');
     const [qtd_limite, setQtd_limite] = useState('');
+    const [categoria, setCategoria] = useState('Acessórios');
+    const [fornecedor, setFornecedor] = useState('');
     const [tipo, setTipo] = useState('Tipo 1');
-
+    
+  
     const history = useHistory();
 
     async function handleNewProduct(e){
@@ -21,7 +24,9 @@ export default function NewProduct() {
             name,
             qtd,
             qtd_limite,
-            tipo
+            tipo,
+            categoria,
+            fornecedor
         };
 
         try{
@@ -53,10 +58,24 @@ export default function NewProduct() {
               onChange={e=> setName(e.target.value)}
               required
               />
-
+    
               <select id="tipo" value={tipo} onChange={e=> setTipo(e.target.value)}>
                 <option value="Tipo 1">Tipo 1</option>
                 <option value="Tipo 2">Tipo 2</option>
+              </select>
+                
+              <select id="categoria" value={categoria} onChange={e=> setCategoria(e.target.value)}>
+                <option value="Lingerie">Lingerie</option>
+                <option value="Roupas Masculinas">Roupas Masculinas</option>
+                <option value="Roupas Femininas">Roupas Femininas</option>
+                <option value="Calçados Femininos">Calçados Femininos</option>
+                <option value="Calçados Masculinos">Calçados Masculinos</option>
+                <option value="Acessórios">Acessórios</option>
+              </select>
+
+              <select id="fornecedor" value={fornecedor} onChange={e=> setFornecedor(e.target.value)}>
+                <option value="João Henrique">João Henrique</option>
+                <option value="Maria Lúcia Lima">Maria Lúcia Lima</option>
               </select>
 
               <input 
@@ -69,7 +88,7 @@ export default function NewProduct() {
 
               <input 
               type="number" 
-              placeholder="Quantidade limite" 
+              placeholder="Quantidade limite(Quantidade minima)" 
               value={qtd_limite}
               onChange={e=> setQtd_limite(e.target.value)}
               required

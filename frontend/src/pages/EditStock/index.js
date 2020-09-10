@@ -17,9 +17,10 @@ export default function NewProduct() {
     try {
       e.preventDefault();
       await api.put(`product/${productId}/${qtd}/0`);
-      alert('Alteração concluida com sucesso.');
+     
 
       localStorage.setItem('productId', "")
+      //retornar ao /profile
       history.push('/profile');
     } catch (err) {
       alert('Erro ao alterar quntidade do produto, tente novamente.');
@@ -30,8 +31,7 @@ export default function NewProduct() {
     try {
       e.preventDefault();
       await api.put(`product/${productId}/${qtd}/1`);
-      alert('Alteração concluida com sucesso.');
-
+      
       localStorage.setItem('productId', "")
       history.push('/profile');
     } catch (err) {

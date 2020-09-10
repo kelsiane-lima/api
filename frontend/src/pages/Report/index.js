@@ -15,6 +15,7 @@ export default function Profile() {
   useEffect(() => {
     api.get('profile').then(response => {
       setProducts(response.data);
+      
     })
   }, [userName]);
 
@@ -26,7 +27,7 @@ export default function Profile() {
   return (
     <div className="report-container">
       <header>
-      <h1>Produtos em falta</h1>
+      <h1>Produtos em Falta</h1>
         <Link className="button" onClick={() => handleImprimir()}>Imprimir</Link>
 
         <button type="button">
