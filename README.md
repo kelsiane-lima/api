@@ -30,11 +30,13 @@ npm install ou npm i
     ou
     npm start
 ```
-
+#### É necessário ter o PostgresSQL na sua máquina ou Sqlite, se preferir usar o Sqlite modifique o arquivo de configuração [knexfile.js](https://github.com/kelsiane-lima/api/blob/master/knexfile.js)
 ## Ferramentas e Tecnologias utilizadas:
 
 * PostgresSQL
 * Express.js
 * Node.js
 * Knex.js
+
+## Informações de como executar as migrations [clique_aqui](https://github.com/kelsiane-lima/api/blob/master/src/database/README.md)
 
