@@ -1,11 +1,11 @@
 const express = require('express');
-const UserController = require('./controllers/UserController');
-const ProductController = require('./controllers/ProductController');
+const UsuarioController = require('./controllers/UsuarioController');
+const ProdutoController = require('./controllers/ProdutoController');
 const ProfileController = require('./controllers/ProfileController');
-const SessionController = require('./controllers/SessionController');
+const SessaoController = require('./controllers/SessaoController');
 const FornecedorController = require('./controllers/FornecedorController');
 const CategoryController = require('./controllers/CategoryController');
-
+const FabricanteController = require('./controllers/FabricanteController');
 const routes = express.Router();
 
 //Rotas de Fornecedor
@@ -17,10 +17,10 @@ routes.put('/fornecedor/:fornecedor_id', FornecedorController.edit);
 
 //Rotas de User
 
-routes.get('/user', UserController.index);
-routes.post('/user', UserController.create);
-routes.delete('/user/:usuario_id', UserController.delete);
-routes.put('/user/:usuario_id', UserController.edit);
+routes.get('/user', UsuarioController.index);
+routes.post('/user', UsuarioController.create);
+routes.delete('/user/:usuario_id', UsuarioController.delete);
+routes.put('/user/:usuario_id', UsuarioController.edit);
 
 //Rotas de Categorias
 
@@ -31,18 +31,24 @@ routes.put('/category/:categoria_id', CategoryController.edit);
 
 //Rota de autenticaçao simples
 
-routes.post('/session', SessionController.create);
+routes.post('/session', SessaoController.create);
 
 // Rotas de Produtos
 
-routes.get('/product', ProductController.index);
-routes.post('/product', ProductController.create);
-routes.delete('/product/:produto_id', ProductController.delete);
-routes.put('/product/:produto_id/:qtd/:op', ProductController.edit);
+routes.get('/product', ProdutoController.index);
+routes.post('/product', ProdutoController.create);
+routes.delete('/product/:produto_id', ProdutoController.delete);
+routes.put('/product/:produto_id/:qtd/:op', ProdutoController.edit);
 
 // Rotas para criar a página de profile
 
 routes.get('/profile/:name',  ProfileController.index);
 routes.get('/profile',  ProfileController.relatorio);
+
+// Rotas de Fabricante
+routes.get('/fabricante', FabricanteController.index);
+routes.delete('/fabricante/:fabricante_id', FabricanteController.delete);
+routes.post('/fabricante', FabricanteController.create);
+routes.put('/fabricante/:fabricante_id', FabricanteController.edit);
 
 module.exports = routes;

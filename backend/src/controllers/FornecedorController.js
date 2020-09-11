@@ -14,12 +14,12 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            const { nome, cnpj, celular, email, endereco } = request.body;
+            const { nome, cnpj, telefone, email, endereco } = request.body;
 
             await connection('fornecedores').insert({
                 nome,
                 cnpj,
-                celular,
+                telefone,
                 email,
                 endereco
             });
@@ -50,13 +50,13 @@ module.exports = {
 
         try {
             const {fornecedor_id} = request.params;
-            const { nome, cnpj, celular, email, endereco } = request.body;
+            const { nome, cnpj, telefone, email, endereco } = request.body;
 
             
             await connection('fornecedores').where('fornecedor_id', fornecedor_id)
             .update('nome',nome)
             .update('cnpj', cnpj)
-            .update('celular',celular)
+            .update('celular',telefone)
             .update('email',email)
             .update('endereco',endereco);
             return response.send().status(201);

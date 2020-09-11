@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sistema de backend - Controle de Estoque para a disciplina de Dev-Web",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",

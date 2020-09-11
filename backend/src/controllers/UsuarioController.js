@@ -2,15 +2,6 @@ const crypto = require('crypto');
 const connection = require('../database/connection');
 
 
-const alg = 'aes-256-ctr'
-const pwd = 'kelsiane'
-
-const text = 'chupa cabra'
-const cipher = crypto.createCipher(alg, pwd)
-const crypted = cipher.update(text, 'utf8', 'hex')
-console.log(crypted)
-
-
 
 module.exports = {
     async index(request, response, next) {

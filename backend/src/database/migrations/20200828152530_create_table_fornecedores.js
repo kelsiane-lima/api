@@ -4,7 +4,7 @@ exports.up = function(knex) {
       table.increments('fornecedor_id').primary()
       table.string('nome')
       table.string('cnpj')
-      table.string('celular')
+      table.string('telefone')
       table.string('email').unique()
       table.string('endereco')
       table.timestamp('created_at').defaultTo(knex.fn.now())
