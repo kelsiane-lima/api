@@ -6,7 +6,6 @@ exports.up = function(knex) {
         table.text('observacao')
         table.integer('qtd')
         table.integer('qtd_limite')
-        table.string('tipo')
         table 
               .integer('fornecedor_id_')
               .references('fornecedores.fornecedor_id')

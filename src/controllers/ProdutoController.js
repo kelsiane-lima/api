@@ -15,7 +15,7 @@ module.exports = {
 
     async create(request, response, next) {
         try {
-            const { fabricante_id_, categoria_id_, fornecedor_id_, qtd, qtd_limite, tipo, nome } = request.body;
+            const { fabricante_id_, categoria_id_, fornecedor_id_, qtd, qtd_limite, nome, observacao } = request.body;
 
             await connection('produtos').insert({
                 fabricante_id_,
@@ -24,7 +24,8 @@ module.exports = {
                 nome,
                 qtd,
                 qtd_limite,
-                tipo
+                observacao,
+               
 
             });
             return response.send().status(204);
