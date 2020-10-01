@@ -13,6 +13,7 @@ module.exports = {
         }
 
     },
+    
 
     async relatorio(request, response, next) {
         try {

@@ -1,7 +1,5 @@
-const crypto = require('crypto');
+const {hash} = require('bcryptjs');
 const connection = require('../database/connection');
-
-
 
 module.exports = {
     async index(request, response, next) {
@@ -19,10 +17,13 @@ module.exports = {
 
         try {
             const {usuario_id} = request.params;
+            
             const {nome, senha} = request.body;
+
+            const senhaHash = await hash(senha, 8);
             await connection('usuarios').where('usuario_id', usuario_id)
             .update('nome', nome)
-            .update('senha', senha);
+            .update('senha', senhaHash);
             return response.send().status(201)
         } catch (error) {
             next(error).status(500)
@@ -40,12 +41,12 @@ module.exports = {
     async create(request, response, next) {
         try {
             const { nome,email, senha } = request.body;
-    
+           const senhaHash = await hash(senha, 8);
             await connection('usuarios').insert({
     
                 nome,
                 email,
-                senha
+                senha: senhaHash,
             });
     
             return response.send().status(201);
