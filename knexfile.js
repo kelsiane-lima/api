@@ -1,6 +1,6 @@
-
+// sistema de controle de estoque
 module.exports = {
-  
+
   staging: {
     client: 'sqlite3',
     connection: {
@@ -12,7 +12,7 @@ module.exports = {
     migrations: {
       directory: `${__dirname}/src/database/migrations`
     },
-  
+
   },
 
   development: {
