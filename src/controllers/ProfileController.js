@@ -3,8 +3,8 @@ const connection = require('../database/connection');
 module.exports = {
     async index(request, response, next) {
         try {
-            const { name } = request.params;
-            const product = await connection('produtos').where('name', 'like', '%' + name + '%').select('*');
+            const { nome } = request.params;
+            const product = await connection('produtos').where('nome', 'like', '%' + nome + '%').select('*');
 
             return response.json(product);
 
