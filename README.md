@@ -4,15 +4,15 @@
 
 ## Caso queira só fazer os testes no Postman, foi feito o deploy da API no Heroku [LINK API](https://api-devweb.herokuapp.com/)
 
-##### Não é necessário token
+#### Não é necessário token
 
 * Criar usuário (POST)
 ```sh
- https://api-devweb.herokuapp.com/user/
+ 	https://api-devweb.herokuapp.com/user/
 ```
 ```json
 { 
-		"nome": "Silas",
+	"nome": "Silas",
         "email": "silas@gmail.com",
         "senha": "1234"
 	
@@ -20,11 +20,11 @@
 ```
 * Vai em sessão pra pegar o token e ter acesso as outras rotas (POST)
 ```sh
- https://api-devweb.herokuapp.com/session/
+	 https://api-devweb.herokuapp.com/session/
 ```
 ```json
 { 
-		"nome": "Silas",
+	"nome": "Silas",
         "senha": "1234"
 	
 }
@@ -32,7 +32,7 @@
 
 * Coloque o token no Headers da requisição com a chave __x-access-token__ como mostra na figura, isso serve para acessar todas as outras rotas que se encontram no arquivo [routes](https://github.com/kelsiane-lima/api/blob/master/src/routes.js)
 
-![alt text](https://github.com/kelsiane-lima/api/tree/master/img/example.PNG)
+![alt text](https://github.com/kelsiane-lima/api/blob/master/img/example.PNG)
 
 
 # Instalação Manual
@@ -45,12 +45,12 @@ Em seguida:
 
 #### Clona o repositório:
 ```sh
-git clone https://github.com/kelsiane-lima/api.git
+    git clone https://github.com/kelsiane-lima/api.git
 ```
 Linux ou Windows:
 
 ```sh
-npm install ou npm i
+    npm install ou npm i
 ```
 
 
@@ -68,6 +68,7 @@ npm install ou npm i
     ou
     npm start
 ```
+
 #### Migrations
 Rode as migrações do projeto, para mais informações de como rodar clique [AQUI](https://github.com/kelsiane-lima/api/blob/master/src/database/README.md)
 
