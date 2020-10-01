@@ -3,7 +3,7 @@
 
 #### Rodar a última migração que criei
 
-__npx knex migrate:latest__
+* __npx knex migrate:latest__
 
 #### Listar as Migrations
 
