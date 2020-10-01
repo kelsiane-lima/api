@@ -4,7 +4,7 @@ const ProdutoController = require('./controllers/ProdutoController');
 const ProfileController = require('./controllers/ProfileController');
 const SessaoController = require('./controllers/SessaoController');
 const FornecedorController = require('./controllers/FornecedorController');
-const CategoryController = require('./controllers/CategoryController');
+const CategoriaController = require('./controllers/CategoriaController');
 const FabricanteController = require('./controllers/FabricanteController');
 const routes = express.Router();
 
@@ -24,10 +24,10 @@ routes.put('/user/:usuario_id', UsuarioController.edit);
 
 //Rotas de Categorias
 
-routes.get('/category', CategoryController.index);
-routes.post('/category', CategoryController.create);
-routes.delete('/category/:categoria_id', CategoryController.delete);
-routes.put('/category/:categoria_id', CategoryController.edit);
+routes.get('/category', CategoriaController.index);
+routes.post('/category', CategoriaController.create);
+routes.delete('/category/:categoria_id', CategoriaController.delete);
+routes.put('/category/:categoria_id', CategoriaController.edit);
 
 //Rota de autenticaçao simples
 

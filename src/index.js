@@ -22,5 +22,5 @@ app.use((error, req, res, next) => {
 })
 
 app.listen(PORT,function(){
-   console.log("localhost:",PORT);
+   console.log("api rodando");
 });
