@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { FiArrowLeft } from 'react-icons/fi';
 import {Link, useHistory} from 'react-router-dom';
 
 import api from '../../services/api';
@@ -28,6 +27,7 @@ export default function Login() {
         localStorage.setItem('token', response.data.token);
         
         history.push('/profile');
+        history.go(0);
       }catch(err){
         alert('Falha no login, tente novamente.');
         

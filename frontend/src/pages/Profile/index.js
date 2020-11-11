@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2, FiSearch, FiEdit2, FiClipboard } from 'react-icons/fi';
+import {  FiTrash2, FiSearch, FiEdit2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 

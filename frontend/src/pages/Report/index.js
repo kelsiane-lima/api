@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api';
@@ -10,8 +10,6 @@ export default function Profile() {
   const [products, setProducts] = useState([]);
 
   const userName = localStorage.getItem('userName');
-
-  const history = useHistory();
   useEffect(() => {
     api.get('profile').then(response => {
       setProducts(response.data);

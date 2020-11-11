@@ -4,7 +4,6 @@ import {FiArrowLeft} from 'react-icons/fi';
 import api from '../../services/api';
 
 import './styles.css';
-import Button from '../Button';
 
 export default function NewUsuario() {
 
