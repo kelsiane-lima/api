@@ -16,7 +16,6 @@ export default function Profile() {
   
   useEffect(() => {
     api.get('product').then(response => {
-    
       setProducts(response.data);
       return response.data;
     

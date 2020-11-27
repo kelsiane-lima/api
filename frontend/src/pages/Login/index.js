@@ -39,7 +39,7 @@ export default function Login() {
     <div className="login-container">
         <section className="form">
             <form onSubmit={handleLogin}>
-                <h1>Faça seu Login</h1>
+            <img src={require('../../img/text10.png')} height="40px"alt="logo"/>
 
                 <input 
                 placeholder="Usuario" required
@@ -58,8 +58,8 @@ export default function Login() {
           
                 <div style={{display:'flex'}}>
                   <div style={{margin: '15px'}}> <h3 >Não tem uma conta?</h3> </div > 
-                 <div style={{margin: '15px'}} > <Link style={{color:'#fff'}} to="/usuario/new"> <h3>Registre-se</h3></Link></div>
-           
+                 <div style={{textAlign:'right'}} > <Link style={{color:'#fff'}} to="/usuario/new"> <h3>Registre-se</h3></Link></div>
+            
            
             </div>
   
@@ -68,7 +68,7 @@ export default function Login() {
 
         {/* borda svg */}
         
-        <div className="footer" style={{height: '150px', width:'100%', overflow: 'hidden'}} ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style={{height: '100%' , width: '100%'}}><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style={{stroke: 'none', fill: '#fff'}}></path></svg></div>
+        {/* <div className="footer" style={{height: '150px', width:'100%', overflow: 'hidden'}} ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style={{height: '100%' , width: '100%'}}><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style={{stroke: 'none', fill: '#fff'}}></path></svg></div> */}
     </div>
   );
 }
