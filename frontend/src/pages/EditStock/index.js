@@ -17,13 +17,13 @@ export default function NewProduct() {
     try {
       e.preventDefault();
       await api.put(`product/${productId}/${qtd}/0`);
-     
+
 
       localStorage.setItem('productId', "")
-      //retornar ao /profile
+
       history.push('/profile');
     } catch (err) {
-      alert('Erro ao alterar quntidade do produto, tente novamente.');
+      alert('Erro ao alterar quantidade do produto, tente novamente.');
     }
   }
 
@@ -31,11 +31,11 @@ export default function NewProduct() {
     try {
       e.preventDefault();
       await api.put(`product/${productId}/${qtd}/1`);
-      
+
       localStorage.setItem('productId', "")
       history.push('/profile');
     } catch (err) {
-      alert('Erro ao alterar quntidade do produto, tente novamente.');
+      alert('Erro ao alterar quantidade do produto, tente novamente.');
     }
   }
 

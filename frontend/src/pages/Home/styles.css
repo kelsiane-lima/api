@@ -1,24 +1,24 @@
 .footer {
-    text-align: center;
-    color: #002155;
-    background-color: #ffffff;
-    font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    text-decoration :none;
-    padding: 40px;
+  text-align: center;
+  color: #002155;
+  background-color: #ffffff;
+  font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-decoration :none;
+  padding: 40px;
 }
 .footer a{
 font-size: 17px;
-  text-decoration: none;
-  color: #002155; 
-  text-justify: initial; 
+text-decoration: none;
+color: #002155; 
+text-justify: initial; 
 }
- section {
-     margin: 0px;
-     font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-image: linear-gradient(to bottom, #002155 0, #002155 75%, white 45%);
-  }
+ section .container-ini {
+   margin: 0px;
+   font-family: Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-image: linear-gradient(to bottom, #002155 0, #002155 75%, white 45%);
+}
 
-  section .container-home{
+section .container-home{
 text-align:center;
 background-color: #002155;
 color: #ffffff;
@@ -133,16 +133,21 @@ background-color: #fff;
 .body { width:auto; height: auto; }
 .html {width: auto;}
 .image{width: 100%;} 
+
 section .container-funcionalidades .container-grid{
 display: inline;
 }
-section .container-funcionalidades h1{
- width: 100%;
- font-size: 35px;
-}
-section .container-funcionalidades h2{
- width: 100%;
- font-size: 17px;
-}
 
+section .container-funcionalidades h1{
+width: 100%;
+font-size: 35px;
+}
+section .container-funcionalidades h4{
+  font-weight: 10px;
+  font-size: 35px;
+  }
+section .container-funcionalidades h2{
+width: 100%;
+font-size: 17px;
+}
 }

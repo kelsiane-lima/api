@@ -16,6 +16,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    
    fill: #ffffff;
    
 }
@@ -35,4 +36,5 @@
 .login-container section input{
     width: 100%;
     max-width: 350px;
+    
 }

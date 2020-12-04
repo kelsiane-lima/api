@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -9,66 +9,71 @@ export default function Login() {
   const [nome, setNome] = useState('');
   const [senha, setSenha] = useState('');
 
-    const history = useHistory();
+  const history = useHistory();
 
-    async function handleLogin(e){
-      e.preventDefault();
+  async function handleLogin(e) {
+    e.preventDefault();
 
-      try{
-        const data ={
-          
-          nome,
-          senha,
-        }
-        const response = await api.post('session', data);
-      
-        localStorage.setItem('userId', response.data.id);
-        localStorage.setItem('userName', response.data.nome);
-        localStorage.setItem('token', response.data.token);
-        
-        history.push('/profile');
-        history.go(0);
-      }catch(err){
-        alert('Falha no login, tente novamente.');
-        
+    try {
+      const data = {
+
+        nome,
+        senha
+
       }
+      const response = await api.post('session', data);
+
+      localStorage.setItem('userId', response.data.id);
+      localStorage.setItem('userName', response.data.nome);
+      localStorage.setItem('token', response.data.token);
+
+      history.push('/profile');
+      history.go(0);
+    } catch (err) {
+      alert('Falha no login, tente novamente.');
+
     }
+  }
 
   return (
-    
+
     <div className="login-container">
-        <section className="form">
-            <form onSubmit={handleLogin}>
-            <img src={require('../../img/text10.png')} height="40px"alt="logo"/>
+      <section className="form">
+        <form onSubmit={handleLogin}>
+          <img src={require('../../img/text10.png')} height="40px" alt="logo" />
 
-                <input 
-                placeholder="Usuario" required
-                value={nome}
-                onChange={(e)=> setNome
-                  (e.target.value)}
-                />
+          <input
+            placeholder="Usuario" required
+            value={nome}
+            onChange={(e) => setNome
+              (e.target.value)}
+          />
 
-                <input type="password" placeholder="Senha" required
-                value={senha}
-                onChange={e=> setSenha(e.target.value)}
-                />
-                <button type="submit" className="button">Entrar</button>
-               
-            </form>
+          <input type="password" placeholder="Senha" required
+            value={senha}
+            onChange={e => setSenha(e.target.value)}
+          />
+          <button style= {{width:'70%'}} type="submit" className="button">Entrar</button>
+
+        </form>
+
+<div className="nao-conta">
+<h3 style= {{padding: '4px' }}>Não tem uma conta ?</h3>
+<br></br>
+<Link style={{ color: '#fff', textDecoration: 'none', padding: '3px' }} to="/usuario/new"> <h3>Registre-se</h3></Link>
+</div>
+
+        {/* <div style={{ display: 'flex' }}> */}
           
-                <div style={{display:'flex'}}>
-                  <div style={{margin: '15px'}}> <h3 >Não tem uma conta?</h3> </div > 
-                 <div style={{textAlign:'right'}} > <Link style={{color:'#fff'}} to="/usuario/new"> <h3>Registre-se</h3></Link></div>
-            
-           
-            </div>
-  
-          
-        </section>
+          {/* <div style={{ margin: '15px' }}> <h3 >Não tem uma conta?</h3> </div > */}
+          {/* <div style={{ textAlign: 'right' }} > <Link style={{ color: '#fff' }} to="/usuario/new"> <h3>Registre-se</h3></Link></div> */}
 
-        {/* borda svg */}
-        
-        {/* <div className="footer" style={{height: '150px', width:'100%', overflow: 'hidden'}} ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style={{height: '100%' , width: '100%'}}><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style={{stroke: 'none', fill: '#fff'}}></path></svg></div> */}
+
+      </section>
+
+      {/* borda svg */}
+
+      {/* <div className="footer" style={{height: '150px', width:'100%', overflow: 'hidden'}} ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style={{height: '100%' , width: '100%'}}><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style={{stroke: 'none', fill: '#fff'}}></path></svg></div> */}
     </div>
   );
 }

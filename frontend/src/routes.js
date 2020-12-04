@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Login from './pages/Login';
 import Profile from './pages/Profile';
@@ -11,25 +11,37 @@ import NewCategoria from './pages/NewCategoria';
 import NewFabricante from './pages/NewFabricante';
 import NewUsuario from './pages/NewUsuario';
 import Home from './pages/Home';
-export default function Routes(){
- 
-    
-    return(
+import Authentictoken from './services/verificationToken'
+
+export default function Routes() {
+    const PrivateRoute = ({ component: Component, ...rest }) => (
+        <Route {...rest} render={props => (
+            Authentictoken() ? (
+                <Component {...props} />
+            ) : (
+
+                    <Redirect to={{ pathname: '/', state: { from: props.location } }}></Redirect>
+                )
+        )} />
+    );
+
+    return (
         <BrowserRouter>
             <Switch>
-        
-                 <Route path="/" exact component={Home}/>
-                 <Route path="/login" exact component={Login}/>
-                <Route path="/profile"  component={Profile} exact/>
-                <Route path="/product/new"  component={NewProduct}/>
-                <Route path="/product/edit"  component={EditStock}/>
-                <Route path="/report"  component={Report}/>
-                <Route path="/fornecedor/new" component={NewFornecedor}/>
-                <Route path="/categoria/new" component={NewCategoria}/>
-                <Route path="/fabricante/new" component={NewFabricante}/>
-                <Route path="/usuario/new" component={NewUsuario}/>
-                
-                <Route component={()=>(<h1>404</h1>)}></Route>
+
+                <Route path="/" exact component={Home} />
+                <Route path="/login" exact component={Login} />
+                <PrivateRoute path="/profile" component={Profile} exact />
+                <PrivateRoute path="/product/new" component={NewProduct} />
+                <PrivateRoute path="/product/edit" component={EditStock} />
+                <PrivateRoute path="/report" component={Report} />
+                <PrivateRoute path="/fornecedor/new" component={NewFornecedor} />
+                <PrivateRoute path="/categoria/new" component={NewCategoria} />
+                <PrivateRoute path="/fabricante/new" component={NewFabricante} />
+                <Route path="/usuario/new" component={NewUsuario} />
+                <PrivateRoute path="/app" component={() => (<h1>você está logado</h1>)} />
+                <Route component={() => (<h1>404</h1>)}></Route>
+
             </Switch>
         </BrowserRouter>
     );

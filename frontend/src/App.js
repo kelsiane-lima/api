@@ -7,7 +7,7 @@ import './pages/global.css';
 function App() {
   return (
     <Routes />
-   
+
   );
 }
 
