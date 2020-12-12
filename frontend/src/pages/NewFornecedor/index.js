@@ -169,7 +169,7 @@ export default function NewFornecedor() {
                 </button>
 
                 <button type="button" onClick={() => localStorage.setItem('fornecedorId', fornecedor.fornecedor_id)}>
-                  <Link to="/fornecedor/edit">
+                  <Link to="/profile">
                     <FiEdit2 size={20} color="#a8a8b3" />
                   </Link>
                 </button>

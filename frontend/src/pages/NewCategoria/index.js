@@ -109,7 +109,7 @@ export default function NewCategoria() {
                                 </button>
 
                                 <button type="button" onClick={() => localStorage.setItem('categoriaId', categoria.categoria_id)}>
-                                    <Link to="/category/edit">
+                                    <Link to="/profile">
                                         <FiEdit2 size={20} color="#a8a8b3" />
                                     </Link>
                                 </button>

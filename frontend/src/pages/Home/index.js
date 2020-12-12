@@ -25,7 +25,7 @@ export default function Home() {
                     <div className="container-home" id="container-home">
                         <h1>TURBINE O CONTROLE DE ESTOQUE DA SUA EMPRESA</h1>
                         <h2>Todos os produtos da sua empresa sob controle para você acessar de onde você estiver.</h2>
-                        <button>COMECE A USAR GRATUITAMENTE</button>
+                        <Link to="/login"><button>COMECE A USAR GRATUITAMENTE</button></Link>
                     </div>
 
                     <div className="image" >

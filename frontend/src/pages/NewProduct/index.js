@@ -90,8 +90,6 @@ export default function NewProduct() {
             required
           />
 
-
-
           <select id="categoria" onChange={e => setCategoriaId(e.target.value)}>
             <option value="" disabled selected>Selecionar</option>
             {categoria.map(category => (

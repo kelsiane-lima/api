@@ -116,7 +116,7 @@ export default function NewFabricante() {
                                 </button>
 
                                 <button type="button" onClick={() => localStorage.setItem('fabricanteId', fabricante.fabricante_id)}>
-                                    <Link to="/fabricante/edit">
+                                    <Link to="/profile">
                                         <FiEdit2 size={20} color="#a8a8b3" />
                                     </Link>
                                 </button>
