@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft, FiEdit2, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 
-import './styles.css';
+import '../container-global.css';
 
 export default function NewCategoria() {
     const [nome, setNome] = useState('');
@@ -11,7 +11,7 @@ export default function NewCategoria() {
     const [categoria, setCategoria] = useState([]);
 
     const history = useHistory();
-
+    
     const userName = localStorage.getItem('userName');
 
     useEffect(() => {
@@ -40,6 +40,7 @@ export default function NewCategoria() {
         }
     }
 
+    
     async function handleNewCategoria(e) {
         e.preventDefault();
 
@@ -62,7 +63,7 @@ export default function NewCategoria() {
 
     return (
         <>
-            <div className="new-categoria-container">
+            <div className="container-global">
                 <div className="content">
                     <section>
                         <h1>Cadastrar nova Categoria</h1>
@@ -108,8 +109,8 @@ export default function NewCategoria() {
                                     <FiTrash2 size={20} color="#e02041" />
                                 </button>
 
-                                <button type="button" onClick={() => localStorage.setItem('categoriaId', categoria.categoria_id)}>
-                                    <Link to="/profile">
+                                <button type="button" onClick={() => localStorage.setItem('categoriaId', cate.categoria_id)}>
+                                    <Link to="/categoria/edit">
                                         <FiEdit2 size={20} color="#a8a8b3" />
                                     </Link>
                                 </button>
@@ -118,6 +119,7 @@ export default function NewCategoria() {
                 </ul>
 
             </div>
+            
         </>
     );
 }

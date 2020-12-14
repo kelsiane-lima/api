@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-export default function NewProduct() {
+export default function EditStock() {
   const [qtd, setQtd] = useState('');
 
   const history = useHistory();
@@ -27,6 +27,7 @@ export default function NewProduct() {
     }
   }
 
+
   async function handleRemoveProduct(e) {
     try {
       e.preventDefault();
@@ -39,9 +40,13 @@ export default function NewProduct() {
     }
   }
 
+  
+
+
   return (
     <div className="edit-product">
       <div className="content">
+
         <section>
           <h1>Adicionar ou remover do estoque</h1>
           <Link to="/profile">
@@ -57,8 +62,9 @@ export default function NewProduct() {
           <button type="submit" className="button" onClick={handleAddProduct}>Adicionar</button>
           <button type="submit" className="button" onClick={handleRemoveProduct}>Remover</button>
         </form>
+
       </div>
+
     </div>
   );
 }
-

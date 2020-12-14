@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 
-import './styles.css';
+import '../container-global.css';
 
 export default function NewUsuario() {
 
@@ -37,7 +37,7 @@ export default function NewUsuario() {
 
     return (
         <>
-            <div className="new-usuario-container">
+            <div className="container-global">
                 <div className="content">
                     <section>
                         <h1>Cadastrar novo Usuario</h1>

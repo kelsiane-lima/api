@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft, FiEdit2, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 
-import './styles.css';
+import '../container-global.css';
 
 export default function NewFabricante() {
     const [nome, setNome] = useState('');
@@ -62,7 +62,7 @@ export default function NewFabricante() {
 
     return (
         <>
-            <div className="new-fabricante-container">
+            <div className="container-global">
                 <div className="content">
                     <section>
                         <h1>Cadastrar novo Fabricante</h1>
@@ -115,8 +115,8 @@ export default function NewFabricante() {
                                     <FiTrash2 size={20} color="#e02041" />
                                 </button>
 
-                                <button type="button" onClick={() => localStorage.setItem('fabricanteId', fabricante.fabricante_id)}>
-                                    <Link to="/profile">
+                                <button type="button" onClick={() => localStorage.setItem('fabricanteId', fabi.fabricante_id)}>
+                                    <Link to="/fabricante/edit">
                                         <FiEdit2 size={20} color="#a8a8b3" />
                                     </Link>
                                 </button>

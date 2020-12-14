@@ -118,6 +118,8 @@ export default function NewProduct() {
             ))
 
             }
+         
+         
           </select>
           <input
             type="number"

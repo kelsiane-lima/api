@@ -3,8 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft, FiEdit2, FiSearch, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 
-import './styles.css';
-import '../global.css';
+import '../container-global.css';
 export default function NewFornecedor() {
   const [nome, setNome] = useState('');
   const [cnpj, setCnpj] = useState('');
@@ -79,7 +78,7 @@ export default function NewFornecedor() {
 
     <Fragment>
 
-      <div className="new-fornecedor-container">
+      <div className="container-global">
         <div className="content">
           <section>
             <h1>Cadastrar novo Fornecedor</h1>
@@ -168,8 +167,8 @@ export default function NewFornecedor() {
                   <FiTrash2 size={20} color="#e02041" />
                 </button>
 
-                <button type="button" onClick={() => localStorage.setItem('fornecedorId', fornecedor.fornecedor_id)}>
-                  <Link to="/profile">
+                <button type="button" onClick={() => localStorage.setItem('fornecedorId', forne.fornecedor_id)}>
+                  <Link to="/fornecedor/edit">
                     <FiEdit2 size={20} color="#a8a8b3" />
                   </Link>
                 </button>

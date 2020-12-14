@@ -1,4 +1,4 @@
-.new-categoria-container{
+.container-global{
     width: 100%;
     max-width: 1120px;
     height: 100vh;
@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.new-categoria-container .content{
+.container-global .content{
     width: 100%;
     padding: 96px;
     background: #f0f0f5;
@@ -21,31 +21,31 @@
     align-items: center;
 }
 
-.new-categoria-container .content section{
+.container-global .content section{
     width: 100%;
     max-width: 380px;
 }
 
-.new-categoria-container .content section h1{
+.container-global .content section h1{
     margin: 64px 0 32px;
     font-size: 32px;
   
 
 }
 
-.new-categoria-container .content section p{
+.container-global .content section p{
     font-size: 18px;
     color: #737380;
     line-height: 32px;
 }
 
-.new-categoria-container .content form{
+.container-global .content form{
     width: 100%;
     max-width: 450px;
 }
 
-.new-categoria-container .content form input,
-.new-categoria-container .content form select{
+.container-global .content form input,
+.container-global .content form select{
     margin-top: 8px;
     width: 100%;
 }

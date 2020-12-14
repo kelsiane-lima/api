@@ -12,7 +12,9 @@ import NewFabricante from './pages/NewFabricante';
 import NewUsuario from './pages/NewUsuario';
 import Home from './pages/Home';
 import Authentictoken from './services/verificationToken'
-
+import EditCategoria from './pages/EditCategoria';
+import EditFornecedor from './pages/EditFornecedor';
+import EditFabricante from './pages/EditFabricante';
 export default function Routes() {
     const PrivateRoute = ({ component: Component, ...rest }) => (
         <Route {...rest} render={props => (
@@ -34,10 +36,13 @@ export default function Routes() {
                 <PrivateRoute path="/profile" component={Profile} exact />
                 <PrivateRoute path="/product/new" component={NewProduct} />
                 <PrivateRoute path="/product/edit" component={EditStock} />
+                <PrivateRoute path="/categoria/edit" component={EditCategoria} />
                 <PrivateRoute path="/report" component={Report} />
                 <PrivateRoute path="/fornecedor/new" component={NewFornecedor} />
+                <PrivateRoute path="/fornecedor/edit" component={EditFornecedor} />
                 <PrivateRoute path="/categoria/new" component={NewCategoria} />
                 <PrivateRoute path="/fabricante/new" component={NewFabricante} />
+                <PrivateRoute path="/fabricante/edit" component={EditFabricante} />
                 <Route path="/usuario/new" component={NewUsuario} />
                 <PrivateRoute path="/app" component={() => (<h1>você está logado</h1>)} />
                 <Route component={() => (<h1>404</h1>)}></Route>
