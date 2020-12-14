@@ -53,27 +53,19 @@ export default function Login() {
             value={senha}
             onChange={e => setSenha(e.target.value)}
           />
-          <button style= {{width:'70%'}} type="submit" className="button">Entrar</button>
+          <button style={{ width: '70%' }} type="submit" className="button">Entrar</button>
 
         </form>
 
-<div className="nao-conta">
-<h3 style= {{padding: '4px' }}>Não tem uma conta ?</h3>
-<br></br>
-<Link style={{ color: '#fff', textDecoration: 'none', padding: '3px' }} to="/usuario/new"> <h3>Registre-se</h3></Link>
-</div>
-
-        {/* <div style={{ display: 'flex' }}> */}
-          
-          {/* <div style={{ margin: '15px' }}> <h3 >Não tem uma conta?</h3> </div > */}
-          {/* <div style={{ textAlign: 'right' }} > <Link style={{ color: '#fff' }} to="/usuario/new"> <h3>Registre-se</h3></Link></div> */}
-
+        <div className="nao-conta">
+          <h3 style={{ padding: '4px' }}>Não tem uma conta ?</h3>
+          <br></br>
+          <Link style={{ color: '#fff', textDecoration: 'none', padding: '3px' }} to="/usuario/new"> <h3>Registre-se</h3></Link>
+        </div>
 
       </section>
 
-      {/* borda svg */}
 
-      {/* <div className="footer" style={{height: '150px', width:'100%', overflow: 'hidden'}} ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style={{height: '100%' , width: '100%'}}><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style={{stroke: 'none', fill: '#fff'}}></path></svg></div> */}
     </div>
   );
 }
